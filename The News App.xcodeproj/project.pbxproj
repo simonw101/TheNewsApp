@@ -13,6 +13,8 @@
 		65A277FE262A7CA30022E9CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A277FC262A7CA30022E9CC /* Main.storyboard */; };
 		65A27800262A7CAA0022E9CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A277FF262A7CAA0022E9CC /* Assets.xcassets */; };
 		65A27803262A7CAB0022E9CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A27801262A7CAB0022E9CC /* LaunchScreen.storyboard */; };
+		65A2780D262A7FE60022E9CC /* NewsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A2780C262A7FE60022E9CC /* NewsObject.swift */; };
+		65A27810262A83CE0022E9CC /* chosenCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A2780F262A83CE0022E9CC /* chosenCountry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		65A277FF262A7CAA0022E9CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65A27802262A7CAB0022E9CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65A27804262A7CAB0022E9CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65A2780C262A7FE60022E9CC /* NewsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsObject.swift; sourceTree = "<group>"; };
+		65A2780F262A83CE0022E9CC /* chosenCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chosenCountry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				65A277FF262A7CAA0022E9CC /* Assets.xcassets */,
 				65A27801262A7CAB0022E9CC /* LaunchScreen.storyboard */,
 				65A27804262A7CAB0022E9CC /* Info.plist */,
+				65A2780C262A7FE60022E9CC /* NewsObject.swift */,
+				65A2780F262A83CE0022E9CC /* chosenCountry.swift */,
 			);
 			path = "The News App";
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 				65A277FB262A7CA30022E9CC /* ViewController.swift in Sources */,
 				65A277F7262A7CA30022E9CC /* AppDelegate.swift in Sources */,
 				65A277F9262A7CA30022E9CC /* SceneDelegate.swift in Sources */,
+				65A27810262A83CE0022E9CC /* chosenCountry.swift in Sources */,
+				65A2780D262A7FE60022E9CC /* NewsObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
