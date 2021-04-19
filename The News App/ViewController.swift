@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var chosenCountry = ChosenCountryData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,12 +25,13 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return chosenCountry.countryDataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Test"
+        cell.textLabel?.text =  chosenCountry.countryDataArray[indexPath.row].countryName
+        cell.imageView?.image = chosenCountry.countryDataArray[indexPath.row].image
         return cell
     }
     
