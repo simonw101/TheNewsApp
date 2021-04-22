@@ -35,7 +35,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let pickedCountry = chosenCountry.countryDataArray[indexPath.row]
+        
+        performSegue(withIdentifier: "toNewsListVC", sender: pickedCountry)
+    }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toNewsListVC" {
+            
+            if let newsVC = segue.destination as? NewsListViewController {
+                
+                if let pickedCountry = sender as? ChosenCountryObject {
+                    
+                    newsVC.country = pickedCountry
+                    
+                }
+                
+            }
+            
+        }
+    }
 }
