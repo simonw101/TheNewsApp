@@ -6,21 +6,31 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class NewsListViewController: UIViewController {
     
+    @IBOutlet weak var newsTable: UITableView!
+    
     var country: ChosenCountryObject? = nil
-
+    
+    var newsArticles = [NewsObject]()
+    
+    var parse = ParseJson()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         if let stringTitle = country?.countryName {
             
             title = stringTitle
             
         }
-       
+        
+        newsTable.delegate = self
+        newsTable.dataSource = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,17 +61,13 @@ class NewsListViewController: UIViewController {
                     
                     if let data = data {
                         
-                        do {
+                        self.newsArticles = self.parse.parse(data: data)
                             
-                            let parsedJsonData = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
+                            DispatchQueue.main.async {
+
+                                self.newsTable.reloadData()
+                            }
                             
-                            print(parsedJsonData)
-                            
-                        } catch {
-                            
-                            print("error parsing json")
-                            
-                        }
                         
                     }
                     
@@ -74,5 +80,20 @@ class NewsListViewController: UIViewController {
         
     }
     
-
 }
+
+extension NewsListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return newsArticles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text =  newsArticles[indexPath.row].title
+        return cell
+    }
+    
+}
+
+
